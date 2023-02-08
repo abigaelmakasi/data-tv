@@ -41,7 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 100,
                   ),
                   const Text(
-                    ("l'arriver du pape dens la ville de kinshasa "),
+                    ("l'arriver du pape dens la ville de kinshasa s")
+                
                   ),
                 ],
               ),
@@ -54,10 +55,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   const Text("l'eglise catholique refuse les mariage")
 
-                  
+                                  
                 ],
+
           
               ),
+              Row(
+                children: [
+                  Image.asset(
+                    "assets/images/img2.PNG",
+                    width: 100,
+                    height: 100,
+                  ),
+                  const Text("MERCI MAMAN FOR ALL")
+
+                                  
+                ],
+
+          
+              ),
+              
               Center(
                 child: ElevatedButton(
                     onPressed:()=> print("click btn"),

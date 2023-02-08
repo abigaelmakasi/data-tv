@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: 100,
                     height: 100,
                   ),
-                  const Text("l'eglise catholique refuse les mariage")
+                  const Text("l'eglise catholiqnzvchsjksue refuse les mariage")
 
                                   
                 ],
@@ -67,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: 100,
                     height: 100,
                   ),
-                  const Text("MERCI MAMAN FOR ALL")
+                  const Text("MERCI MAMAN FOR gx7tyxsuysxtALL")
 
                                   
                 ],

@@ -15,7 +15,8 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: AppBar(
             title: const Text("data tv"),
           ),
-          body: Column(
+          body: Center(
+            child:  Column(
             children: [
               Row(
                 children: [
@@ -24,12 +25,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: 100,
                     height: 100,
                   ),
-                  const Expanded(child: Text(
-                    ("bienvenue sur notre chaine data dhggvdfjfkljdfkl;jjgfj;lk "),
+                  const Expanded(
+                    child: Text(
+                    ("bienvenue sur notre chaine data une chaine,nous vous offrons les meilleure programe "),
                     style: TextStyle(
                       fontSize: 14,
                     ),
-                  ),)
+                  ),
+                  )
                  
                 ],
               ),
@@ -40,10 +43,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: 100,
                     height: 100,
                   ),
-                  const Text(
-                    ("l'arriver du pape dens la ville de kinshasa s")
+
+                  const Expanded(
+                    child:  Text(
+                    ("l'arriver du pape dens la ville de kinshasa a dimunuwer sensiblement les embouteillage"),
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
                 
                   ),
+                  )
                 ],
               ),
               Row(
@@ -53,26 +62,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: 100,
                     height: 100,
                   ),
-                  const Text("l'eglise catholiqnzvchsjksue refuse les mariage")
-
-                                  
+                   const Expanded(
+                    child:Text("l'eglise catholique refuse le mariage  homo sexuel "),
+                     )
+               
                 ],
-
-          
-              ),
-              Row(
-                children: [
-                  Image.asset(
-                    "assets/images/img2.PNG",
-                    width: 100,
-                    height: 100,
-                  ),
-                  const Text("MERCI MAMAN FOR gx7tyxsuysxtALL")
-
-                                  
-                ],
-
-          
+                
               ),
               
               Center(
@@ -85,6 +80,8 @@ class _HomeScreenState extends State<HomeScreen> {
               
             ],
           ),
+            ),
+          
           bottomNavigationBar: BottomNavigationBar(
             selectedItemColor: Colors.pink,
             unselectedItemColor: Colors.black,
@@ -95,12 +92,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 BottomNavigationBarItem(
                 icon: Icon(Icons.calendar_month),
-                label: ("planing")
+                label: ("calendrier")
                 ),
                 BottomNavigationBarItem(
                 icon: Icon(Icons.add),
                 label: ("ajout")
                 ),
+
+                BottomNavigationBarItem(
+                icon: Icon(Icons.play_arrow),
+                label: ("ajout")
+                ),
+                
             ],
             
             

@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   const Expanded(
                     child: Text(
-                    ("bienvenue sur notre chaine data une chaine,nous vous offrons les meilleure programe "),
+                    ("bienvenue sur notre chaine data tv,nous vous offrons les meilleure programme "),
                     style: TextStyle(
                       fontSize: 14,
                     ),
@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                   const Expanded(
                     child:  Text(
-                    ("l'arriver du pape dens la ville de kinshasa a dimunuwer sensiblement les embouteillage"),
+                    ("l'arriver du pape dens la ville de kinshasa a diminuer sensiblement les embouteillage"),
                     style: TextStyle(
                       fontSize: 14,
                     ),
@@ -63,20 +63,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 100,
                   ),
                    const Expanded(
-                    child:Text("l'eglise catholique refuse le mariage  homo sexuel "),
+                    child:Text(
+                      ("l'eglise catholique refuse le mariage  homo sexuel "),
+                      style: TextStyle(
+                        fontSize: 14,
+                      ),
+                    )
                      )
                
                 ],
                 
               ),
-              
-              Center(
-                child: ElevatedButton(
-                    onPressed:()=> print("click btn"),
-                    child:const Text("afficher le planning")
-                  ),
-        
-              )
               
             ],
           ),

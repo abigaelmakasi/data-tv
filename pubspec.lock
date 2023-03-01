@@ -224,6 +224,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2"
+  video:
+    dependency: "direct main"
+    description:
+      name: video
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   video_player:
     dependency: "direct main"
     description:

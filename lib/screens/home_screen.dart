@@ -1,64 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:data_tv/screens/video_widget';
 import 'package:video_player/video_player.dart';
+
 const Dblack = Colors.black;
-
-void main() => runApp(VideoApp());
-
-class VideoApp extends StatefulWidget {
-  @override
-  _VideoAppState createState() => _VideoAppState();
-}
-
-class _VideoAppState extends State<VideoApp> {
-  late VideoPlayerController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = VideoPlayerController.network(
-        'http://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_20mb.mp4')
-      ..initialize().then((_) {
-        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
-        setState(() {});
-      });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Video Demo',
-      home: Scaffold(
-        body: Center(
-          child: _controller.value.isInitialized
-              ? AspectRatio(
-                  aspectRatio: _controller.value.aspectRatio,
-                  child: VideoPlayer(_controller),
-                )
-              : Container(),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            setState(() {
-              _controller.value.isPlaying
-                  ? _controller.pause()
-                  : _controller.play();
-            });
-          },
-          child: Icon(
-            _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
-          ),
-        ),
-      ),
-    );
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _controller.dispose();
-  }
-}
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -69,40 +13,72 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late int pageIndex = 0;
+  late VideoPlayerController videocontroller;
+  String Texbegin = '';
+  int val = 0;
+  @override
+  void initState() {
+    super.initState();
+
+    videocontroller = VideoPlayerController.asset("assets/makasi_pembele.mp4")
+      ..initialize().then((value) {
+        setState(() {
+          videocontroller.play();
+          videocontroller.setLooping(true);
+          videocontroller.setVolume(1.0);
+        });
+      });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           title: const Text("data tv"),
           backgroundColor: Dblack,
           elevation: 0.0,
-          leading:IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.menu,
-                  color: Colors.white,
-                  size: 30,
-                )), 
-        
-          actions: [
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.search_rounded,
-                  color: Colors.blue,
-                  size: 30,
-                )),
-          ],
         ),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 0),
             child: Column(
               children: [
-                const VideoWidget(),
                 const SizedBox(
                   height: 20,
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 2),
+                  child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 200,
+                      child: Stack(
+                        children: [
+                          videocontroller.value.isInitialized
+                              ? AspectRatio(
+                                  aspectRatio:
+                                      videocontroller.value.aspectRatio,
+                                  child: VideoPlayer(videocontroller),
+                                )
+                              : Container(),
+                          Align(
+                            alignment: Alignment.center,
+                            child: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    videocontroller.value.isPlaying
+                                        ? videocontroller.pause()
+                                        : videocontroller.play();
+                                  });
+                                },
+                                icon: Icon(videocontroller.value.isPlaying
+                                    ? Icons.pause
+                                    : Icons.play_arrow)),
+                          )
+                        ],
+                      )),
+                ),
+                const SizedBox(),
                 Column(
                   children: [
                     infosItem(
@@ -149,6 +125,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       title:
                           "je suis la mamamn d'un magnifique petite garcons adorable",
                       image: "assets/images/pape.jpg",
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.only(top: 2),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[],
+                      ),
                     ),
 
                     // s
@@ -241,24 +225,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Colors.pink,
-          unselectedItemColor: Colors.black,
-          onTap: (index) {
-            setState(() {
-              pageIndex = index;
-            });
-          },
-          currentIndex: pageIndex,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: ("accuiel")),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.calendar_month), label: ("calendrier")),
-            BottomNavigationBarItem(icon: Icon(Icons.add), label: ("ajout")),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.play_arrow), label: ("play")),
-          ],
         ));
   }
 }

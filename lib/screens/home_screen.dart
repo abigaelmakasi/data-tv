@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          centerTitle: true,
+          centerTitle: true ,
           title: const Text("data tv"),
           backgroundColor: Dblack,
           elevation: 0.0,
@@ -83,12 +83,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     infosItem(
                       title:
-                          "Visite du Pape Francois I a Kinshasa = RDC, il a ete recu par son excellence Fatshi Beeeeeeeeeeeeeeeee",
+                          "sql serveur tutoriel",
                       image: "assets/images/pape.jpg",
                     ),
                     infosItem(
                       title:
-                          "La future developpeuse Abigael Makasi abeli likolo ya Gradle. Mama ehhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
+                          "kazadi is mwana ndaku is venu avec le pain dans le bol in the farc",
                       image: "assets/images/pape.jpg",
                     ),
                     infosItem(
@@ -131,7 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding: const EdgeInsets.only(top: 2),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[],
+                        children: const <Widget>[],
                       ),
                     ),
 

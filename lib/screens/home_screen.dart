@@ -87,12 +87,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     children: [
                       infosItem(
-                        title: "sql serveur tutoriel",
+                        title: "une formation complete sur le sql serveur tutoriel, y compris le base de donnees ",
                         image: "assets/images/pape.jpg",
                       ),
                       infosItem(
                         title:
-                            "kazadi is mwana ndaku is venu avec le pain dans le bol in the farc",
+                            "une formaton de haute qualite , je nous invite a venir apprendre sur le sql",
                         image: "assets/images/pape.jpg",
                       ),
                       infosItem(

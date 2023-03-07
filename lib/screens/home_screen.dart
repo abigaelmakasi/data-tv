@@ -35,13 +35,47 @@ class _HomeScreenState extends State<HomeScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        actions: [
+    
+        PopupMenuButton(
+          
+          itemBuilder: (context){
+            return [
+                  PopupMenuItem<int>(
+                      value: 0,
+                      child: Text("My Account"),
+                  ),
+
+                  PopupMenuItem<int>(
+                      value: 1,
+                      child: Text("Settings"),
+                  ),
+
+                  PopupMenuItem<int>(
+                      value: 2,
+                      child: Text("Logout"),
+                  ),
+              ];
+          },
+          onSelected:(value){
+            if(value == 0){
+                print("My account menu is selected.");
+            }else if(value == 1){
+                print("Settings menu is selected.");
+            }else if(value == 2){
+                print("Logout menu is selected.");
+            }
+          }
+        ),
+
+  ],
         title: Image.asset(
           "assets/images/datatv_logo.png",
           fit: BoxFit.contain,
           height: 50,
         ),
         centerTitle: true,
-        backgroundColor: dwhite,
+        backgroundColor: Dblack,
         elevation: 0.0,
       ),
       body: Container(

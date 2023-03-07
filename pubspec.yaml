@@ -50,13 +50,11 @@ dev_dependencies:
   
   flutter_launcher_icons: "^0.12.0"
 
-  flutter_icons:
-  android: true
-  ios: true
-  image_path: "assets/images/datatv_logo.png"
-  adaptive_icon_backround: "#fffff"
-  adaptive_icon_forgerond: "assets/images/datatv_logo_forgerond.png"
-
+icons_launcher:
+  image_path: 'assets/images/datatv_logo.png'
+  platforms:
+    android:
+      enable: true
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
